@@ -64,8 +64,8 @@ class AboutDecoratingWithClasses(Koan):
         # To clarify: the decorator above the function has no arguments, even
         # if the decorated function does
 
-        self.assertEqual(__, self.foo())
-        self.assertEqual(__, self.parrot('pieces of eight'))
+        self.assertEqual('foo, foo', self.foo())
+        self.assertEqual('PIECES OF EIGHT, PIECES OF EIGHT', self.parrot('pieces of eight'))
 
     # ------------------------------------------------------------------
 
@@ -77,7 +77,7 @@ class AboutDecoratingWithClasses(Koan):
         #wrap the function with the decorator
         self.sound_check = self.doubleit(self.sound_check)
 
-        self.assertEqual(__, self.sound_check())
+        self.assertEqual('Testing..., Testing...', self.sound_check())
 
     # ------------------------------------------------------------------
 
