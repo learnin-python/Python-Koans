@@ -44,10 +44,10 @@ class AboutInheritance(Koan):
 
     def test_subclasses_can_modify_existing_behavior(self):
         chico = self.Chihuahua("Chico")
-        self.assertEqual(__, chico.bark())
+        self.assertEqual('yip', chico.bark())
 
         fido = self.Dog("Fido")
-        self.assertEqual(__, fido.bark())
+        self.assertEqual('WOOF', fido.bark())
 
     # ------------------------------------------------------------------
 
