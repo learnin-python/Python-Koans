@@ -37,17 +37,17 @@ class AboutInheritance(Koan):
 
     def test_subclasses_add_new_behavior(self):
         chico = self.Chihuahua("Chico")
-        self.assertEqual(__, chico.wag())
+        self.assertEqual('happy', chico.wag())
 
         fido = self.Dog("Fido")
-        with self.assertRaises(___): fido.wag()
+        with self.assertRaises(AttributeError): fido.wag()
 
     def test_subclasses_can_modify_existing_behavior(self):
         chico = self.Chihuahua("Chico")
-        self.assertEqual(__, chico.bark())
+        self.assertEqual('yip', chico.bark())
 
         fido = self.Dog("Fido")
-        self.assertEqual(__, fido.bark())
+        self.assertEqual('WOOF', fido.bark())
 
     # ------------------------------------------------------------------
 
@@ -58,7 +58,7 @@ class AboutInheritance(Koan):
 
     def test_subclasses_can_invoke_parent_behavior_via_super(self):
         ralph = self.BullDog("Ralph")
-        self.assertEqual(__, ralph.bark())
+        self.assertEqual('WOOF, GRR', ralph.bark())
 
     # ------------------------------------------------------------------
 
@@ -68,7 +68,7 @@ class AboutInheritance(Koan):
 
     def test_super_works_across_methods(self):
         george = self.GreatDane("George")
-        self.assertEqual(__, george.growl())
+        self.assertEqual('WOOF, GROWL', george.growl())
 
     # ---------------------------------------------------------
 
