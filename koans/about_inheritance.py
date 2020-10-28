@@ -37,10 +37,10 @@ class AboutInheritance(Koan):
 
     def test_subclasses_add_new_behavior(self):
         chico = self.Chihuahua("Chico")
-        self.assertEqual(__, chico.wag())
+        self.assertEqual('happy', chico.wag())
 
         fido = self.Dog("Fido")
-        with self.assertRaises(___): fido.wag()
+        with self.assertRaises(AttributeError): fido.wag()
 
     def test_subclasses_can_modify_existing_behavior(self):
         chico = self.Chihuahua("Chico")
