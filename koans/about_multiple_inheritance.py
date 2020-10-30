@@ -119,10 +119,10 @@ class AboutMultipleInheritance(Koan):
         mro = type(self.Spiderpig()).mro()
         self.assertEqual('Spiderpig', mro[0].__name__)
         self.assertEqual('Pig', mro[1].__name__)
-        self.assertEqual(__, mro[2].__name__)
-        self.assertEqual(__, mro[3].__name__)
-        self.assertEqual(__, mro[4].__name__)
-        self.assertEqual(__, mro[5].__name__)
+        self.assertEqual('Spider', mro[2].__name__)
+        self.assertEqual('Animal', mro[3].__name__)
+        self.assertEqual('Nameable', mro[4].__name__)
+        self.assertEqual('object', mro[5].__name__)
 
     def test_confirm_the_mro_controls_the_calling_order(self):
         jeff = self.Spiderpig()
@@ -132,7 +132,7 @@ class AboutMultipleInheritance(Koan):
         self.assertRegex(next.here(), 'Pig')
 
         next = super(AboutMultipleInheritance.Pig, jeff)
-        self.assertRegex(next.here(), __)
+        self.assertRegex(next.here(), 'Spider')
 
         # Hang on a minute?!? That last class name might be a super class of
         # the 'jeff' object, but its hardly a superclass of Pig, is it?
