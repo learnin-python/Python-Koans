@@ -99,10 +99,10 @@ class AboutMultipleInheritance(Koan):
 
     def test_base_class_methods_can_affect_instance_variables_in_the_object(self):
         jeff = self.Spiderpig()
-        self.assertEqual(__, jeff.name)
+        self.assertEqual('Jeff', jeff.name)
 
         jeff.set_name("Rover")
-        self.assertEqual(__, jeff.name)
+        self.assertEqual('Rover', jeff.name)
 
     def test_left_hand_side_inheritance_tends_to_be_higher_priority(self):
         jeff = self.Spiderpig()
