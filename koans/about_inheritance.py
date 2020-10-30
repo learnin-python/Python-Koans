@@ -82,8 +82,8 @@ class AboutInheritance(Koan):
 
     def test_base_init_does_not_get_called_automatically(self):
         snoopy = self.Pug("Snoopy")
-        with self.assertRaises(___): name = snoopy.name
+        with self.assertRaises(AttributeError): name = snoopy.name
 
     def test_base_init_has_to_be_called_explicitly(self):
         boxer = self.Greyhound("Boxer")
-        self.assertEqual(__, boxer.name)
+        self.assertEqual('Boxer', boxer.name)
