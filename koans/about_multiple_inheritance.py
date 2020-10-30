@@ -106,11 +106,11 @@ class AboutMultipleInheritance(Koan):
 
     def test_left_hand_side_inheritance_tends_to_be_higher_priority(self):
         jeff = self.Spiderpig()
-        self.assertEqual(__, jeff.color())
+        self.assertEqual('pink', jeff.color())
 
     def test_super_class_methods_are_higher_priority_than_super_super_classes(self):
         jeff = self.Spiderpig()
-        self.assertEqual(__, jeff.legs())
+        self.assertEqual(8, jeff.legs())
 
     def test_we_can_inspect_the_method_resolution_order(self):
         #
