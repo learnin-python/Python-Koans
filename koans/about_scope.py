@@ -77,7 +77,7 @@ class AboutScope(Koan):
         global counter
         start = counter
         self.increment_using_global_counter()
-        self.assertEqual(__, counter == start + 1)
+        self.assertEqual(True, counter == start + 1)
 
     # ------------------------------------------------------------------
 
@@ -96,10 +96,10 @@ class AboutScope(Koan):
         return from_the_boosh()
 
     def test_getting_something_locally(self):
-        self.assertEqual(__, self.local_access())
+        self.assertEqual('this is a local shop for local people', self.local_access())
 
     def test_getting_something_nonlocally(self):
-        self.assertEqual(__, self.nonlocal_access())
+        self.assertEqual('eels', self.nonlocal_access())
 
     # ------------------------------------------------------------------
 
