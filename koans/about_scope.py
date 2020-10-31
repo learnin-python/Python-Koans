@@ -27,7 +27,7 @@ class AboutScope(Koan):
         self.assertEqual('joes dog', rover.identify())
 
         self.assertEqual(False, type(fido) == type(rover))
-        self.assertEqual(__, jims.Dog == joes.Dog)
+        self.assertEqual(False, jims.Dog == joes.Dog)
 
     # ------------------------------------------------------------------
 
@@ -35,13 +35,13 @@ class AboutScope(Koan):
         pass
 
     def test_bare_bones_class_names_do_not_assume_the_current_scope(self):
-        self.assertEqual(__, AboutScope.str == str)
+        self.assertEqual(False, AboutScope.str == str)
 
     def test_nested_string_is_not_the_same_as_the_system_string(self):
-        self.assertEqual(__, self.str == type("HI"))
+        self.assertEqual(False, self.str == type("HI"))
 
     def test_str_without_self_prefix_stays_in_the_global_scope(self):
-        self.assertEqual(__, str == type("HI"))
+        self.assertEqual(True, str == type("HI"))
 
     # ------------------------------------------------------------------
 
