@@ -16,17 +16,17 @@ class AboutScope(Koan):
     #
 
     def test_dog_is_not_available_in_the_current_scope(self):
-        with self.assertRaises(___): fido = Dog()
+        with self.assertRaises(NameError): fido = Dog()
 
     def test_you_can_reference_nested_classes_using_the_scope_operator(self):
         fido = jims.Dog()
         # name 'jims' module name is taken from jims.py filename
 
         rover = joes.Dog()
-        self.assertEqual(__, fido.identify())
-        self.assertEqual(__, rover.identify())
+        self.assertEqual('jims dog', fido.identify())
+        self.assertEqual('joes dog', rover.identify())
 
-        self.assertEqual(__, type(fido) == type(rover))
+        self.assertEqual(False, type(fido) == type(rover))
         self.assertEqual(__, jims.Dog == joes.Dog)
 
     # ------------------------------------------------------------------
