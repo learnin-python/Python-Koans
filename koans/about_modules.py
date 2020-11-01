@@ -17,20 +17,20 @@ class AboutModules(Koan):
         from . import local_module  # local_module.py
 
         duck = local_module.Duck()
-        self.assertEqual(__, duck.name)
+        self.assertEqual('Daffy', duck.name)
 
     def test_importing_attributes_from_classes_using_from_keyword(self):
         from .local_module import Duck
 
         duck = Duck()  # no module qualifier needed this time
-        self.assertEqual(__, duck.name)
+        self.assertEqual('Daffy', duck.name)
 
     def test_we_can_import_multiple_items_at_once(self):
         from . import jims, joes
 
         jims_dog = jims.Dog()
         joes_dog = joes.Dog()
-        self.assertEqual(__, jims_dog.identify())
+        self.assertEqual('jims dog', jims_dog.identify())
         self.assertEqual(__, joes_dog.identify())
 
     def test_importing_all_module_attributes_at_once(self):
