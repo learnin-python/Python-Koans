@@ -47,14 +47,14 @@ class AboutModules(Koan):
         self.assertEqual('Phil', hamster.name)
 
     def test_modules_hide_attributes_prefixed_by_underscores(self):
-        with self.assertRaises(___):
+        with self.assertRaises(NameError):
             private_squirrel = _SecretSquirrel()
 
     def test_private_attributes_are_still_accessible_in_modules(self):
         from .local_module import Duck  # local_module.py
 
         duck = Duck()
-        self.assertEqual(__, duck._password)
+        self.assertEqual('password', duck._password)
         # module level attribute hiding doesn't affect class attributes
         # (unless the class itself is hidden).
 
@@ -66,7 +66,7 @@ class AboutModules(Koan):
 
         # 'Goat' is on the __all__ list
         goat = Goat()
-        self.assertEqual(__, goat.name)
+        self.assertEqual('George', goat.name)
 
         # How about velociraptors?
         lizard = _Velociraptor()
