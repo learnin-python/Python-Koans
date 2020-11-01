@@ -31,7 +31,7 @@ class AboutModules(Koan):
         jims_dog = jims.Dog()
         joes_dog = joes.Dog()
         self.assertEqual('jims dog', jims_dog.identify())
-        self.assertEqual(__, joes_dog.identify())
+        self.assertEqual('joes dog', joes_dog.identify())
 
     def test_importing_all_module_attributes_at_once(self):
         """
@@ -43,7 +43,7 @@ class AboutModules(Koan):
         goose = Goose()
         hamster = Hamster()
 
-        self.assertEqual(__, goose.name)
+        self.assertEqual(, goose.name)
         self.assertEqual(__, hamster.name)
 
     def test_modules_hide_attributes_prefixed_by_underscores(self):
