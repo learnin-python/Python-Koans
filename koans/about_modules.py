@@ -70,8 +70,8 @@ class AboutModules(Koan):
 
         # How about velociraptors?
         lizard = _Velociraptor()
-        self.assertEqual(__, lizard.name)
+        self.assertEqual('Cuddles', lizard.name)
 
         # SecretDuck? Never heard of her!
-        with self.assertRaises(___):
+        with self.assertRaises(NameError):
             duck = SecretDuck()
