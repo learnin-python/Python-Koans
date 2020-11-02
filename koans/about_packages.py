@@ -57,4 +57,4 @@ class AboutPackages(Koan):
         # Import contemplate_koans.py/koans/a_package_folder/a_module.py
         from koans.a_package_folder.a_module import Duck
 
-        self.assertEqual(__, Duck.__module__)
+        self.assertEqual('koans.a_package_folder.a_module', Duck.__module__)
