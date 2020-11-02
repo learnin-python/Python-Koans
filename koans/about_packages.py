@@ -35,7 +35,7 @@ class AboutPackages(Koan):
         # Import ./a_package_folder/__init__.py
         from .a_package_folder import an_attribute
 
-        self.assertEqual(__, an_attribute)
+        self.assertEqual(1984, an_attribute)
 
     # ------------------------------------------------------------------
 
