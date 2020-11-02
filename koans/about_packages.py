@@ -43,7 +43,7 @@ class AboutPackages(Koan):
         # Import /contemplate_koans.py
         import contemplate_koans
 
-        self.assertEqual(__, contemplate_koans.__name__)
+        self.assertEqual('contemplate_koans', contemplate_koans.__name__)
 
         # contemplate_koans.py is the root module in this package because it's
         # the first python module called in koans.
