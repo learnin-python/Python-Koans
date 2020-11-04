@@ -13,10 +13,10 @@ class AboutClassAttributes(Koan):
 
     def test_objects_are_objects(self):
         fido = self.Dog()
-        self.assertEqual(__, isinstance(fido, object))
+        self.assertEqual(True, isinstance(fido, object))
 
     def test_classes_are_types(self):
-        self.assertEqual(__, self.Dog.__class__ == type)
+        self.assertEqual(True, self.Dog.__class__ == type)
 
     def test_classes_are_objects_too(self):
         self.assertEqual(__, issubclass(self.Dog, object))
