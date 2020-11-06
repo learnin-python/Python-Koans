@@ -126,8 +126,8 @@ class AboutClassAttributes(Koan):
     def test_classes_and_instances_do_share_class_attributes(self):
         fido = self.Dog3()
         fido.set_name("Fido")
-        self.assertEqual(__, fido.get_name())
-        self.assertEqual(__, self.Dog3.get_name())
+        self.assertEqual('Fido', fido.get_name())
+        self.assertEqual('Fido', self.Dog3.get_name())
 
     # ------------------------------------------------------------------
 
@@ -142,13 +142,13 @@ class AboutClassAttributes(Koan):
         a_static_method = staticmethod(a_static_method)
 
     def test_you_can_define_class_methods_without_using_a_decorator(self):
-        self.assertEqual(__, self.Dog4.a_class_method())
+        self.assertEqual('dogs class method', self.Dog4.a_class_method())
 
     def test_you_can_define_static_methods_without_using_a_decorator(self):
-        self.assertEqual(__, self.Dog4.a_static_method())
+        self.assertEqual('dogs static method', self.Dog4.a_static_method())
 
     # ------------------------------------------------------------------
 
     def test_heres_an_easy_way_to_explicitly_call_class_methods_from_instance_methods(self):
         fido = self.Dog4()
-        self.assertEqual(__, fido.__class__.a_class_method())
+        self.assertEqual('dogs class method', fido.__class__.a_class_method())
