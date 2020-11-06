@@ -75,12 +75,12 @@ class AboutClassAttributes(Koan):
             return "classmethod growl, arg: cls=" + cls.__name__
 
     def test_since_classes_are_objects_you_can_define_singleton_methods_on_them_too(self):
-        self.assertRegex(self.Dog2.growl(), __)
+        self.assertRegex(self.Dog2.growl(), 'cls=Dog2')
 
     def test_classmethods_are_not_independent_of_instance_methods(self):
         fido = self.Dog2()
-        self.assertRegex(fido.growl(), __)
-        self.assertRegex(self.Dog2.growl(), __)
+        self.assertRegex(fido.growl(), 'cls=Dog2')
+        self.assertRegex(self.Dog2.growl(), 'cls=Dog2')
 
     def test_staticmethods_are_unbound_functions_housed_in_a_class(self):
         self.assertRegex(self.Dog2.bark(), __)
