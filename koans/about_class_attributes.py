@@ -83,11 +83,11 @@ class AboutClassAttributes(Koan):
         self.assertRegex(self.Dog2.growl(), 'cls=Dog2')
 
     def test_staticmethods_are_unbound_functions_housed_in_a_class(self):
-        self.assertRegex(self.Dog2.bark(), __)
+        self.assertRegex(self.Dog2.bark(), 'bark, arg: None')
 
     def test_staticmethods_also_overshadow_instance_methods(self):
         fido = self.Dog2()
-        self.assertRegex(fido.bark(), __)
+        self.assertRegex(fido.bark(), 'arg: None')
 
     # ------------------------------------------------------------------
 
@@ -114,14 +114,14 @@ class AboutClassAttributes(Koan):
 
     def test_classmethods_can_not_be_used_as_properties(self):
         fido = self.Dog3()
-        with self.assertRaises(___): fido.name = "Fido"
+        with self.assertRaises(TypeError): fido.name = "Fido"
 
     def test_classes_and_instances_do_not_share_instance_attributes(self):
         fido = self.Dog3()
         fido.set_name_from_instance("Fido")
         fido.set_name("Rover")
-        self.assertEqual(__, fido.get_name_from_instance())
-        self.assertEqual(__, self.Dog3.get_name())
+        self.assertEqual('Fido', fido.get_name_from_instance())
+        self.assertEqual('Rover', self.Dog3.get_name())
 
     def test_classes_and_instances_do_share_class_attributes(self):
         fido = self.Dog3()
