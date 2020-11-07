@@ -15,12 +15,12 @@ class AboutAttributeAccess(Koan):
     def test_calling_undefined_functions_normally_results_in_errors(self):
         typical = self.TypicalObject()
 
-        with self.assertRaises(___): typical.foobar()
+        with self.assertRaises(AttributeError): typical.foobar()
 
     def test_calling_getattribute_causes_an_attribute_error(self):
         typical = self.TypicalObject()
 
-        with self.assertRaises(___): typical.__getattribute__('foobar')
+        with self.assertRaises(AttributeError): typical.__getattribute__('foobar')
 
         # THINK ABOUT IT:
         #
