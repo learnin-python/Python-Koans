@@ -80,7 +80,7 @@ class AboutAttributeAccess(Koan):
     def test_non_foo_messages_are_treated_normally(self):
         catcher = self.WellBehavedFooCatcher()
 
-        with self.assertRaises(___): catcher.normal_undefined_attribute
+        with self.assertRaises(AttributeError): catcher.normal_undefined_attribute
 
     # ------------------------------------------------------------------
 
@@ -115,7 +115,7 @@ class AboutAttributeAccess(Koan):
         catcher = self.RecursiveCatcher()
         catcher.my_method()
         global stack_depth
-        self.assertEqual(__, stack_depth)
+        self.assertEqual(11, stack_depth)
 
     # ------------------------------------------------------------------
 
@@ -136,7 +136,7 @@ class AboutAttributeAccess(Koan):
         catcher = self.MinimalCatcher()
         catcher.my_method()
 
-        self.assertEqual(__, catcher.no_of_getattr_calls)
+        self.assertEqual(0, catcher.no_of_getattr_calls)
 
     def test_getattr_only_catches_unknown_attributes(self):
         catcher = self.MinimalCatcher()
