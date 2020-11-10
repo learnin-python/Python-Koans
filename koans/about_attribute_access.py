@@ -74,8 +74,8 @@ class AboutAttributeAccess(Koan):
     def test_foo_attributes_are_caught(self):
         catcher = self.WellBehavedFooCatcher()
 
-        self.assertEqual(__, catcher.foo_bar)
-        self.assertEqual(__, catcher.foo_baz)
+        self.assertEqual('Foo to you too', catcher.foo_bar)
+        self.assertEqual('Foo to you too', catcher.foo_baz)
 
     def test_non_foo_messages_are_treated_normally(self):
         catcher = self.WellBehavedFooCatcher()
