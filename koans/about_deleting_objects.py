@@ -9,7 +9,7 @@ class AboutDeletingObjects(Koan):
         del lottery_nums[1]
         del lottery_nums[2:4]
 
-        self.assertEqual(___, lottery_nums)
+        self.assertEqual([4, 15, 42], lottery_nums)
 
     def test_del_can_remove_entire_lists(self):
         lottery_nums = [4, 8, 15, 16, 23, 42]
