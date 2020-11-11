@@ -15,7 +15,7 @@ class AboutDeletingObjects(Koan):
         lottery_nums = [4, 8, 15, 16, 23, 42]
         del lottery_nums
 
-        with self.assertRaises(___): win = lottery_nums
+        with self.assertRaises(UnboundLocalError): win = lottery_nums
 
     # ====================================================================
 
