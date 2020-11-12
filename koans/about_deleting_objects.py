@@ -49,7 +49,7 @@ class AboutDeletingObjects(Koan):
             err_msg2 = e.args[0]
 
         self.assertRegex(err_msg1, "'ClosingSale' object has no attribute 'toilet_brushes'")
-        self.assertRegex(err_msg2, __)
+        self.assertRegex(err_msg2, "'ClosingSale' object has no attribute 'hamsters'")
 
     # ====================================================================
 
