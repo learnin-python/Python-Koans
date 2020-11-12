@@ -48,7 +48,7 @@ class AboutDeletingObjects(Koan):
         except AttributeError as e:
             err_msg2 = e.args[0]
 
-        self.assertRegex(err_msg1, __)
+        self.assertRegex(err_msg1, "'ClosingSale' object has no attribute 'toilet_brushes'")
         self.assertRegex(err_msg2, __)
 
     # ====================================================================
